@@ -8,12 +8,14 @@
 |MTR|traceroute，查看网络的转发，还有网络质量|
 |TCP 连接|尝试进行TCP连接，有时候防火墙就对此进行拦截|
 
+![](./image/scene.png)
+
 ## 应用场景&优势
-- 业务站点打不开/特别慢时，使用工具快速定位十分是网络问题/具体是网络的哪一段有问题
-- 时时网络监控诉求，该工具会在点击“探测”后，每隔30s自动做探测，并在代码中提供了上报的钩子，可上报到服务端，做数据分析处理&大盘&告警处理等
+- 业务站点打不开/特别慢时，使用工具快速定位是否是网络问题/具体是网络的哪一段有问题
+- 实时网络监控诉求，该工具会在点击“探测”后，每隔30s自动做探测，并在代码中提供了上报的钩子，可将探测结果数据上报到你的服务端，做数据分析处理&大盘&告警处理
 
 ### 优势
-- windows程序关闭后后台运行
+- windows在程序关闭后后台运行
 - windows系统重启自动后台运行，对用户无感知
 - 相比Electron打包体积动则上百M，该工具打包体积只有10M左右
 
@@ -21,7 +23,7 @@
 [Download page](https://github.com/binshao996/network-detector/releases/tag/v1.0.0)
 
 ## 本地编译
-可以基于本程序做二次开发，然后按照如下方式进行编译.
+可以基于本程序做二次开发，按照如下方式进行编译.
 
 |操作系统|开发构建方式|用户执行方式|
 |----|----|----|
@@ -33,9 +35,9 @@
 基于[wails](https://wails.io/)框架（Go+Vue3）实现。    
 探测部分基于以下几个模块实现：
 - DNS：Go的net包
-- Ping：Go的net包、"golang.org/x/net/icmp"、"golang.org/x/net/ipv4"
+- Ping：Go的net包、golang.org/x/net/icmp、golang.org/x/net/ipv4
 - TCP：Go的net包
-- MTR："github.com/tonobo/mtr/pkg/hop"、"github.com/tonobo/mtr/pkg/mtr"、"golang.org/x/net/icmp"
+- MTR：github.com/tonobo/mtr/pkg/hop、github.com/tonobo/mtr/pkg/mtr、golang.org/x/net/icmp
 
 对于平台差异化，使用如下编译指令做兼容处理：  
 
