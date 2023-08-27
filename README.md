@@ -12,7 +12,6 @@
 
 ## 应用场景&优势
 - 业务站点打不开/特别慢时，使用工具快速定位是否是网络问题/具体是网络的哪一段有问题
-- 实时网络监控诉求，该工具会在点击“探测”后，每隔30s自动做探测，并在代码中提供了上报的钩子，可将探测结果数据上报到你的服务端，做数据分析处理&大盘&告警处理
 - IP被封、TCP443端口被封
 - DNS解析异常
 
@@ -38,6 +37,11 @@
 |Windows|项目下执行make build-windows|安装并直接点击运行|
 |MacOS|项目下执行make build-mac|shell中执行chmod u+x network-detector && sudo ./network-detector|
 |Linux|项目下执行make build-linux|shell中执行chmod u+x network-detector && sudo ./network-detector|
+
+## 上报流程
+该工具会在点击“探测”后，每隔30s自动做探测，并在代码中提供了上报的钩子，可将探测结果数据上报到你的服务端，做数据分析处理&大盘&告警处理.满足实时网络监控诉求。    
+
+![](./image/report.png)
 
 ## 实现
 基于[wails](https://wails.io/)框架（Go+Vue3）实现。    
